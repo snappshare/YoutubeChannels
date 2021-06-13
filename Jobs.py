@@ -11,11 +11,9 @@ class StealYoutubeVideo:
         self._Json = json
 
     def get_progress(self):
-        total = 2
+        total = 1
         done = 0
         if os.path.isfile(self._Json.Downloaded_Path):
-            done = done + 1
-        if os.path.isfile(self._Json.Branded_Path):
             done = done + 1
         return done / total
 
@@ -27,7 +25,3 @@ class StealYoutubeVideo:
                 os.path.dirname(self._Json.Downloaded_Path),
                 ntpath.basename(self._Json.Downloaded_Path)
             )
-        if not os.path.isfile(self._Json.Branded_Path):
-            branding = Branding.Branding()
-            branding.Run(self._Json.Branding_Profile)
-            pass

@@ -13,6 +13,5 @@ my_path = os.path.abspath(os.path.dirname(__file__))
 steal_json = Json.StealYoutubeVideoJson()
 steal_json.Youtube_Uri = 'https://www.youtube.com/watch?v=UZm8jB3wtQE'
 steal_json.Downloaded_Path = os.path.join(my_path, 'Download/test')
-steal_json.Branded_Path = os.path.join(my_path, 'Download/test_branded')
 steal = Jobs.StealYoutubeVideo(steal_json)
 steal.run()
