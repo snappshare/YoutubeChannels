@@ -1,6 +1,4 @@
-import pyyoutube
 from pytube import YouTube
-import os
 
 class Context:
     def Download(self, uri, path, filename):

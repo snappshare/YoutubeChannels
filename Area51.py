@@ -1,5 +1,5 @@
 import pyyoutube
-from Classes.Context import Context
+from Youtube import Context
 
 
 api = pyyoutube.Api(api_key='AIzaSyCPv-GvwuO6k-VlPuX_Ki8ZmGlDdaN-DlM')
