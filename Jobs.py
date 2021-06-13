@@ -1,15 +1,15 @@
 import Youtube
 import os.path
+import Branding
 import ntpath
 
-class BrandVideo:
-    class Json:
-        Intro_Start_End = None
-        Outro_Start_End = None
-        New_Intro_Start_End = None
-        New_Outro_Start_End = None
 
-    _Json = None
+class BrandVideo:
+    _Json = None  # type: Branding.Branding.Json
+
+    def run(self):
+        pass
+
 
 class StealYoutubeVideo:
     class Json:
@@ -18,11 +18,10 @@ class StealYoutubeVideo:
         Downloaded_Path = None
         Branded_Path = None
 
-    _Json = None # type: Json
+    _Json = None  # type: Json
 
-    def __init__(self, uri, branding_profile):
-        self.Uri = uri
-        self.Branding_Profile = branding_profile
+    def __init__(self, json: Json):
+        self._Json = json
 
     def get_progress(self):
         total = 2
@@ -34,12 +33,14 @@ class StealYoutubeVideo:
         return done / total
 
     def run(self):
-        youtube = Youtube.Context()
         if not os.path.isfile(self._Json.Downloaded_Path):
+            youtube = Youtube.Context()
             youtube.Download(
                 self.Uri,
                 os.path.dirname(self._Json.Downloaded_Path),
                 ntpath.basename(self._Json.Downloaded_Path)
             )
         if not os.path.isfile(self._Json.Branded_Path):
+            branding = Branding.Branding()
+            branding.Run(self._Json.Branding_Profile)
             pass
