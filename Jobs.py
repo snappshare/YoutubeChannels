@@ -1,15 +1,7 @@
 import Youtube
 import os.path
-import Branding
 import ntpath
 import Json
-
-
-class BrandVideo:
-    _Json = None  # type: Json.BrandingJson
-
-    def run(self):
-        pass
 
 
 class StealYoutubeVideo:
