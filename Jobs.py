@@ -25,3 +25,13 @@ class StealYoutubeVideo:
                 os.path.dirname(self._Json.Downloaded_Path),
                 ntpath.basename(self._Json.Downloaded_Path)
             )
+
+
+class CreateMusicLiveStreamVideo:
+    _Json = None  # type: Json.CreateMusicLiveStreamVideoJson
+
+    def __init__(self, json: Json):
+        self._Json = json
+
+    def run(self):
+        pass
