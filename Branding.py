@@ -1,9 +1,6 @@
-class Branding:
-    class Json:
-        Intro_Start_End = None
-        Outro_Start_End = None
-        New_Intro_Start_End = None
-        New_Outro_Start_End = None
+import Json
 
-    def Run(self, json: Json):
+
+class Branding:
+    def Run(self, json: Json.BrandingJson):
         pass

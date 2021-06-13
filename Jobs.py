@@ -2,23 +2,18 @@ import Youtube
 import os.path
 import Branding
 import ntpath
+import Json
 
 
 class BrandVideo:
-    _Json = None  # type: Branding.Branding.Json
+    _Json = None  # type: Json.BrandingJson
 
     def run(self):
         pass
 
 
 class StealYoutubeVideo:
-    class Json:
-        Youtube_Uri = None
-        Branding_Profile = None
-        Downloaded_Path = None
-        Branded_Path = None
-
-    _Json = None  # type: Json
+    _Json = None  # type: Json.StealYoutubeVideoJson
 
     def __init__(self, json: Json):
         self._Json = json
@@ -36,7 +31,7 @@ class StealYoutubeVideo:
         if not os.path.isfile(self._Json.Downloaded_Path):
             youtube = Youtube.Context()
             youtube.Download(
-                self.Uri,
+                self._Json.Youtube_Uri,
                 os.path.dirname(self._Json.Downloaded_Path),
                 ntpath.basename(self._Json.Downloaded_Path)
             )
